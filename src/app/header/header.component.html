@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header>
+    <div class="logo">
+        <img src="assets/logo.PNG">
+    </div>
+    <div class="navigation_content">
+
+        <nav class="Banks">
+            <button class="btn" routerLink="/valute" routerLinkActive="active"
+                [ngClass]="{'active': IsCurrencysActivecurrencies}">ვალუტის კურსები</button>
+        </nav>
+
+        <nav class="Banks">
+
+            <button class="btn" routerLink="/calculator" routerLinkActive="active"
+                [ngClass]="{'active': IsCurrencysActivecalculator}">კალკულატორი </button>
+        </nav>
+    </div>
+
+</header>
