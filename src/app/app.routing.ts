@@ -6,7 +6,6 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   { path: '', redirectTo: '/valute', pathMatch: 'full' }, 
   { path: 'valute', component: MainComponent },
-  { path: 'calculator', component: CurrencyCalculatorComponent }
 ];
 
 @NgModule({

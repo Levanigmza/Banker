@@ -82,3 +82,13 @@
         </div>
     </div>
 </div>
+
+<div class="chat-window">
+    <div class="chat-header">
+        <img src="assets/calculator.png" (click)="opencalculator()">
+    </div>
+</div>
+
+<div class="calculator_popup" *ngIf="isOpen">
+    <app-currency-calculator (closeCalculator)="closeCalculator()"></app-currency-calculator>
+</div>

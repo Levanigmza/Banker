@@ -21,7 +21,7 @@ export class CurrencyDisplayComponent implements OnChanges {
   UsdNbg_Rate: string = ' ';
 
   loading: boolean = false;
-
+  isOpen: boolean = false;
 
 
   currentDate: string = ' ';
@@ -34,6 +34,13 @@ export class CurrencyDisplayComponent implements OnChanges {
     if (changes['selectedCurrency'] && changes['selectedCurrency'].currentValue) {
       this.SearchData();
     }
+  }
+
+  opencalculator(){
+    this.isOpen = true;
+  }
+  closeCalculator() {
+    this.isOpen = false;
   }
 
 
