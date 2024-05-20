@@ -7,7 +7,7 @@
 }
 
 .main_content {
-    min-height: 700px;
+    height: 780px;
     display: flex;
     flex-direction: column;
     justify-content: start;

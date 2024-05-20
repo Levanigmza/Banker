@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff) format('woff');
+}
+
+.login{
+    background-image: url("/assets/17745.png");
+    background-size: cover; 
+    background-position: center;
+    padding: 20px;
+    font-family: 'FiraGO';
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 750px;
+
+}
+
+.loginpopup {
+    width: 30%;
+}
+
+
+.register-prompt {
+    margin-top: 40px;
+}
+
+.register-prompt button {
+    font-family: FiraGo;
+
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ffff;
+    border: none;
+    border-radius: 1.3vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #28a745;
+}
+
+.register-prompt button:hover {
+    background-color: #218838;
+}

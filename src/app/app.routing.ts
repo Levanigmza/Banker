@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CurrencyCalculatorComponent } from './currency-calculator/currency-calculator.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './currency-main/main.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/valute', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: 'home', component: HomeComponent },
+  { path: 'register', component: RegistrationComponent },
   { path: 'valute', component: MainComponent },
+
 ];
 
 @NgModule({

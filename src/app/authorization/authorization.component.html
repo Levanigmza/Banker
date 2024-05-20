@@ -1,0 +1,20 @@
+<div class="login-popup">
+
+    <div class="content-wrapper">
+        <h2>ავტორიზაცია</h2>
+        <div class="input-fields">
+            <input type="email" [(ngModel)]="email" name="email" placeholder="ელ ფოსტა">
+            <input type="password" [(ngModel)]="password" name="password" placeholder="პაროლი">
+        </div>
+        <div class="incorrect_credentials" *ngIf="Incorrect">
+            <p>მომხარებლის ელ-ფოსტა ან პაროლი არასწორია</p>
+        </div>
+
+
+        <div class="login">
+            <button class="login-button" (click)="signIn()">შესვლა</button>
+        </div>
+
+
+    </div>
+</div>

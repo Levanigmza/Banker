@@ -17,6 +17,9 @@
   }
 
 .head{
+    width: 100%;
+    text-align: center;
+    color: #274156;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
