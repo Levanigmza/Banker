@@ -23,12 +23,17 @@
 }
 
 .loginpopup {
-    width: 30%;
+    width: 35%;
+}
+.loginpopup h2{
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
 }
 
 
 .register-prompt {
     margin-top: 40px;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
+
 }
 
 .register-prompt button {
@@ -46,4 +51,36 @@
 
 .register-prompt button:hover {
     background-color: #218838;
+}
+
+
+@media (max-width: 576px) {
+
+    .loginpopup{
+        width: 98%;
+
+    }
+
+
+    .loginpopup h2{
+        font-size: 22px;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
+    }
+    
+
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) {
+    .loginpopup{
+        width: 80%;
+
+    }
+}
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .loginpopup{
+            width:65%;
+    
+        }
+  
 }

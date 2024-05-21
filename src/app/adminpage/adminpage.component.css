@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff) format('woff');
+}
+
+
+.admin-page{
+    padding: 20px;
+    height: 750px;
+}
+
+
+.logutbtn button{
+    background-color: #e29d9a80;
+    border-radius: 20px;
+    color: #053354;
+    font-family: 'FiraGo';
+    font-weight: 600;
+    border:1px solid #e29d9a80;
+    font-size: 16px;
+    padding:10px 20px;
+  }

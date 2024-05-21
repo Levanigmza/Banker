@@ -21,7 +21,6 @@
 
 .content-wrapper {
     width: 90%;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -30,35 +29,31 @@
 
 
 h2 {
-    font-family: FiraGo;
+    text-align: center;
 
+    font-family: 'FiraGO';
     padding: 0.8vh;
     text-align: center;
-    font-size: 22px;
+    font-size: 25px;
     color: #18A4E1;
 }
 
 .input-fields {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 100%;
     border-radius: 2vh;
 }
 
 input {
-    padding: 1vw;
-    border: 0.1vw solid #ccc;
-    border-radius: 0.5vw;
-    /* width: 70%; */
-    height: 2%;
-    height: 0.1vw;
-    z-index: 1;
-    border-radius: 2vh;
+    padding: 10px;
+    border: 0.5px solid #ccc;
+    height: 20px;
+    border-radius: 22px;
 }
 
 input:first-child {
-    margin-bottom: 1.5vw;
+    margin-bottom: 25px;
 
 }
 
@@ -74,19 +69,20 @@ input:first-child {
 .login button {
     margin-top: 10px;
     font-family: FiraGo;
-
-    padding: 0.6vw 3vw;
-    font-size: 0.8vw;
+    padding: 10px 25px;
+    font-size: 16.5px;
     background-color: #053354;
     color: #ffff;
     border: none;
-    border-radius: 1.3vw;
+    border-radius: 22px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
-    background-color: #053f7c;
+.login button:hover {
+    background-color: #053e7cbb;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
 }
 
 .incorrect_credentials {
@@ -108,4 +104,102 @@ input:first-child {
     color: red;
     font-size: 14px;
     font-family: FiraGO;
+}
+
+
+
+@media (max-width: 576px) {
+    .login-popup {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        width: 98%;
+    }
+
+    .input-fields input {
+        height: 20px;
+        margin-top: 8px;
+    }
+
+    .login {
+        margin-top: 2vh;
+        width: 100%;
+    }
+
+    .login button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 19px;
+
+    }
+    input:first-child {
+        margin-bottom: 15px;
+    
+    }
+
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .login-popup {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        width: 98%;
+    }
+
+    .input-fields input {
+        height: 30px;
+        margin-top: 8px;
+    }
+
+    .login {
+        margin-top: 2vh;
+        width: 100%;
+    }
+
+    .login button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 19px;
+
+    }
+    input:first-child {
+        margin-bottom: 20px;
+    
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .login-popup {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        width: 98%;
+    }
+
+    .input-fields input {
+        height: 25px;
+        margin-top: 8px;
+    }
+
+    .login {
+        margin-top: 2vh;
+        width: 100%;
+    }
+
+    .login button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 19px;
+
+    }
+
 }

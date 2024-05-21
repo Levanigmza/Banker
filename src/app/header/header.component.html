@@ -5,12 +5,18 @@
     <div class="navigation_content">
 
         <nav class="Banks">
-            <!-- <button class="btn" routerLink="/valute" routerLinkActive="active"
-                [ngClass]="{'active': IsCurrencysActivecurrencies}">ვალუტის კურსები</button> -->
-        </nav>
-        <nav class="Banks">
-            <!-- <button class="btn" routerLink="/account" routerLinkActive="active"
-                [ngClass]="{'active': IsCurrencysActivecalculator}">ჩემი გვერდი </button> -->
+
+            <ng-container *ngIf="isLoggedIn">
+                <div class="user-info-button">
+                    <img src="assets/people-icon.jpg" style="width: 35px;" alt="User Image">
+                    <span>{{ userName }}</span>
+
+                </div>
+                <div class="logutbtn">
+                    <button class="sign-out-button" (click)="signOut()">გასვლა</button>
+                </div>
+            </ng-container>
+
         </nav>
     </div>
 

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnDestroy } from '@angular/core';
+import { UserDataservice } from '../services/UserData.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  IsCurrencysActivecurrencies: boolean = false;
-  IsCurrencysActivecalculator: boolean = false;
+  userName: string = ''
+  isLoggedIn : boolean = false;
+  signOut() {
+
+  }
 }

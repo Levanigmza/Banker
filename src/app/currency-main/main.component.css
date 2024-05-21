@@ -70,6 +70,55 @@
     justify-content: center;
 }
 
+.return-back {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.return-back button {
+    cursor: pointer;
+    font-family: 'FiraGO';
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #18a5e13a;
+}
+hr{
+    background-color: #053354;
+}
+
+.return-back button:hover {
+    background-color: #18a5e170;
+    border: 1px solid gray;
+}
+
+.return-back button img {
+    width: 20px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 576px) {
     .main_content {
         padding: 10px;

@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './currency-main/main.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { adminGuardGuard, isAuthenticatedGuard, userGuardGuard } from './guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, 
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegistrationComponent },
-  { path: 'valute', component: MainComponent },
+  { path: 'valute', component: MainComponent  , canActivate: [isAuthenticatedGuard]},
+  { path: 'userpage', component: UserpageComponent , canActivate: [userGuardGuard] },
+  { path: 'adminpage', component: AdminpageComponent  ,  canActivate : [adminGuardGuard]},
 
 ];
 
