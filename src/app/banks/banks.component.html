@@ -1,0 +1,118 @@
+<div class="showbog">
+    <div class="loader" *ngIf="loading">
+        <img src="assets/pedro2.gif">
+    </div>
+    <div class="bog" [ngClass]="{'blur': loading}">
+
+        <div class="filters">
+            <div class="bank-icon">
+                <img src="assets/bog.png">
+            </div>
+            <div class="services">
+                <div class="drpdownhead">
+                    <span><strong> აირჩიეთ ქალაქი :</strong> </span>
+                </div>
+                <div class="dropdown">
+                    <select id="dropdown-select" [(ngModel)]="selectedCity" (change)="filterBranches()">
+                        <option value="">ყველა</option>
+                        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                    </select>
+                </div>
+
+                <div class="service-category">
+
+                    <div class="drpdownhead">
+                        <span>აირჩიეთ მომსახურეობა :</span>
+                    </div>
+                    <hr>
+                    <div class="checkbox-list">
+                        <ul>
+                            <li (click)="showAll('all')" [ngClass]="{ 'active-category': activeCategory === 'all' }"> ყველა
+                            </li>
+                            <li (click)="filterByCategory('სალომბარდო სესხი')"
+                                [ngClass]="{ 'active-category': activeCategory === 'სალომბარდო სესხი' }"> სალომბარდო
+                                სესხი
+                            </li>
+                            <li (click)="filterByCategory('არასაკრედიტო ოპერაციები')"
+                                [ngClass]="{ 'active-category': activeCategory === 'არასაკრედიტო ოპერაციები' }">
+                                არასაკრედიტო ოპერაციები</li>
+                            <li (click)="filterByCategory('სამომხმარებლო სესხები')"
+                                [ngClass]="{ 'active-category': activeCategory === 'სამომხმარებლო სესხები' }">
+                                სამომხმარებლო
+                                სესხები</li>
+                            <li (click)="filterByCategory('იპოთეკური სესხები')"
+                                [ngClass]="{ 'active-category': activeCategory === 'იპოთეკური სესხები' }"> იპოთეკური
+                                სესხები
+                            </li>
+                            <li (click)="filterByCategory('ბიზნეს სესხები')"
+                                [ngClass]="{ 'active-category': activeCategory === 'ბიზნეს სესხები' }"> ბიზნეს სესხები
+                            </li>
+                            <li (click)="filterByCategory('ავტო სესხები')"
+                                [ngClass]="{ 'active-category': activeCategory === 'ავტო სესხები' }"> ავტო სესხები</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <input type="checkbox" (input)="showopen('open')" [ngClass]="{ 'active-category': activeCategory === 'open' }">ღიაა ახლა 
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="branch-container" [ngClass]="{'no-branchavailable': !branches || branches.length === 0}">
+            <div *ngFor="let branch of displayBranches" class="branch-card">
+                <div class="card-head">
+                    <img *ngIf="branch.photos" [src]="branch.photos" alt="Branch Image" class="branch-image">
+                    <h2> {{ branch.cityGe }} </h2>
+                </div>
+                <div class="branch-info">
+                    <h3><strong>მისამართი : </strong> {{ branch.addressGe }}</h3>
+                    <p><strong>სამუშაო საათები:</strong></p>
+                    <ul>
+                        <li *ngFor="let schedule of branch.objectSchedule">
+                            {{ schedule.workingDayGroupName }}: {{ schedule.workingHoursName }}
+                        </li>
+                    </ul>
+                    <p><strong>სერვისები: </strong></p>
+                    <ul>
+                        <li *ngFor="let service of branch.services">
+                            {{ service.serviceName }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card=buttons">
+                    <div class="branch-status"
+                        [ngClass]="{ 'available': branch.available, 'not-available': !branch.available }">
+                        {{ branch.available ? 'ფილიალი ღიაა' : 'დაკეტილია' }}
+                    </div>
+                    <div class="appointment-av"  [ngClass]="{ 'appointment': branch.available}">
+                        <button (click)="Makeappointment(branch)">ვიზიტის დაჯავშნა </button>
+
+                    </div>
+                    <!-- <div class="appointment-not" *ngIf="!branch.available" [ngClass]="{ 'appointment': !branch.available}">
+                        <button>ვიზიტის დაჯავშნა <img src="assets/lock.png"></button>
+
+                    </div> -->
+                </div>
+            </div>
+            
+            <div class="no-branch" *ngIf="!branches || branches.length === 0" >
+                <h2>სამწუხაროდ ხელმისაწვდომი ფილიალი არ მოიძებნა</h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="show-more">
+        <button *ngIf="displayBranches.length < filteredBranches.length" (click)="loadMore()">მეტის ჩვენება</button>
+    </div>
+
+    <div class="appointment-popup" *ngIf="isappointmentOpen">
+        <app-appointments 
+            [branch]="selectedBranch" 
+            (close_appointment_popup)="close_appointment()">
+        </app-appointments>
+    </div>
+
+</div>

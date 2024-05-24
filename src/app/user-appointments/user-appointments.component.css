@@ -1,0 +1,16 @@
+.appointments-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .appointment-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-item div {
+    margin-bottom: 5px;
+  }
+  

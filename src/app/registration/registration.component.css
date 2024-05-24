@@ -120,7 +120,7 @@ label {
 
 .form-group input:focus {
     outline: none;
-    height: 0.5vw;
+    height: 25px;
     width: 80%;
     border: 0.1px solid #18A4E1;
 
@@ -213,7 +213,7 @@ button[type="register"] {
     }
 
     .return-back {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
     }
 

@@ -1,14 +1,59 @@
 <div class="user-page">
+    <nav class="navigations">
 
-    <h2>User page</h2>
-    
-    <div class="logutbtn">
-        <button class="sign-out-button" (click)="signOut()">გასვლა</button>
-      </div>
+        <div class="navbar">
+            <button class="menu-open" *ngIf="!menuVisible" (click)="toggleMenu()"> <img src="assets/menu.png"></button>
+            <button class="menu-close" *ngIf="menuVisible" (click)="toggleMenu()"><img src="assets/cancel.png"></button>
+            <div class="menu-items" [class.show]="menuVisible">
+                <button [ngClass]="{ 'active-tab': banksload }" class="navmenu__btn" (click)="banks()">ბანკები</button>
+                <button [ngClass]="{ 'active-tab': valuteload }" class="navmenu__btn" (click)="valute()">ვალუტის კურსი</button>
+                <button [ngClass]="{ 'active-tab': reservationsload }" class="navmenu__btn" (click)="reservations()"> ჩემი ჯავშნები</button>
+            </div>
+        </div>
+        <div class="burgermenu">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                    <li [ngClass]="{ 'active-tab': banksload }" class="navmenu__btn" (click)="banks()">ბანკები</li>
+                    <hr>
+                    <li [ngClass]="{ 'active-tab': valuteload }" class="navmenu__btn" (click)="valute()">ვალუტის კურსი</li>
+                    <hr>
+                    <li [ngClass]="{ 'active-tab': reservationsload }" class="navmenu__btn" (click)="reservations()"> ჩემი ჯავშნები</li>
+                    <hr>
+                </ul>
+            </div>
+        </div>
 
-      <div class="logutbtn">
-        <button class="sign-out-button" (click)="Valute()">ვალუტის კურსი</button>
-      </div>
+        <div class="logutbtn">
+            <div class="user-info-button">
+                <img src="assets/user.png" style="width: 35px;" alt="User Image">
+                <div *ngIf="userName && userSurname">
+                    <p> {{ userName }} {{ userSurname }}</p>
+                </div>
+            </div>
+
+            <button class="sign-out-button" (click)="signOut()">გასვლა</button>
+        </div>
 
 
-</div>    
+    </nav>
+    <hr>
+
+    <div class="content" *ngIf="valuteload">
+        <app-main></app-main>
+    </div>
+
+    <div class="content" *ngIf="banksload">
+        <app-banks></app-banks>
+    </div>
+    <div class="content" *ngIf="reservationsload">
+        <app-user-appointments></app-user-appointments>
+    </div>
+
+
+
+
+</div>

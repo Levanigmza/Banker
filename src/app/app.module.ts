@@ -6,17 +6,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './currency-main/main.component';
+import { MainComponent } from './currency/currency-main/main.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { CurrencyDisplayComponent } from './currency-display/currency-display.component';
-import { CurrencyCalculatorComponent } from './currency-calculator/currency-calculator.component';
+import { CurrencyCalculatorComponent } from './currency/currency-calculator/currency-calculator.component';
 import { AppRoutingModule } from './app.routing';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { HomeComponent } from './home/home.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
+import { CurrencyDisplayComponent } from './currency/currency-display/currency-display.component';
+import { BanksComponent } from './banks/banks.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { UserAppointmentsComponent } from './user-appointments/user-appointments.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
     AuthorizationComponent,
     HomeComponent,
     UserpageComponent,
-    AdminpageComponent
+    AdminpageComponent,
+    BanksComponent,
+    AppointmentsComponent,
+    UserAppointmentsComponent
     
   ],
   imports: [

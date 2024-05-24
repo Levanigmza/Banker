@@ -1,0 +1,20 @@
+<div class="appointments-container">
+    <h2>ჩემი ჯავშნები</h2>
+    <div *ngIf="userAppointments.length > 0; else noAppointments">
+      <div *ngFor="let appointment of userAppointments" class="appointment-item">
+        <div>
+          <strong>Date:</strong> {{ appointment.date }}
+        </div>
+        <div>
+          <strong>Time:</strong> {{ appointment.time }}
+        </div>
+        <div>
+          <strong>Service:</strong> {{ appointment.service }}
+        </div>
+      </div>
+    </div>
+    <ng-template #noAppointments>
+      <p>No appointments found.</p>
+    </ng-template>
+  </div>
+  

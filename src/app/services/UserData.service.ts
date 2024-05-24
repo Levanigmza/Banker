@@ -11,7 +11,7 @@ export class UserDataservice {
 
     constructor(private router: Router) {
         const adminUser = ['Admin', 'User', 'admin@mail.com', '1234567890', '123', '1'];
-        const userTemplate = ['User', 'User', 'user@mail.com', '123456789', '123', '0'];
+        const userTemplate = ['Levani', 'Gmz', 'user@mail.com', '123456789', '123', '0'];
         this.registrations.push(adminUser);
         this.registrations.push(userTemplate);
 
@@ -53,7 +53,13 @@ export class UserDataservice {
         const user = this.registrations.find(reg => reg[2] === email);
         return user ? user[3] : null;
     }
-
+    getUserNameAndSurname(personalNumber: string): { name: string, surname: string } | null {
+        const user = this.registrations.find(reg => reg[3] === personalNumber);
+        if (user) {
+            return { name: user[0], surname: user[1] };
+        }
+        return null;
+    }
 
 
     isAuthenticated(): boolean {

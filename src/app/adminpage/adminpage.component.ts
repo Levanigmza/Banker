@@ -1,6 +1,5 @@
-import { Token } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { UserDataservice } from '../services/UserData.service';
 
 @Component({

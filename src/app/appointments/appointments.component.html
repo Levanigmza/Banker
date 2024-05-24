@@ -1,0 +1,48 @@
+<div class="appointment">
+
+    <div class="head">
+        <h2>ვიზიტის დაჯავშნა</h2>
+        <div class="close">
+            <img src="assets/close.png" (click)="closepopup()">
+        </div>
+    </div>
+    <hr>
+    <div class="popup-body">
+        <div class="card-head">
+            <img *ngIf="branch.photos" [src]="branch.photos" alt="Branch Image" class="branch-image">
+            <h2> {{ branch.cityGe }} </h2>
+        </div>
+        <div class="branch-info">
+            <h3><strong>მისამართი : </strong> {{ branch.addressGe }}</h3>
+            <p><strong>სამუშაო საათები:</strong></p>
+            <ul>
+                <li *ngFor="let schedule of branch.objectSchedule">
+                    {{ schedule.workingDayGroupName }}: {{ schedule.workingHoursName }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+    <div class="make-appointment">
+        <span>აირჩიეთ დრო : </span>
+        <select [(ngModel)]="selectedDate" (change)="updateAvailableTimes(branch)">
+            <option *ngFor="let date of availableDates" [value]="date">{{ date }}</option>
+        </select>
+        <select [(ngModel)]="selectedTime">
+            <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
+        </select>
+    </div>
+    <hr>
+    <div class="choose-service">
+        <span>აირჩიეთ მომსახურეობა :</span>
+        <select [(ngModel)]="selectedService">
+            <option *ngFor="let service of branch.services" [value]="service.serviceName">{{ service.serviceName }}
+            </option>
+        </select>
+    </div>
+    <hr>
+    <div class="confirm-appointment">
+        <button (click)="makeAppointment()">დაჯავშნა</button>
+    </div>
+</div>
