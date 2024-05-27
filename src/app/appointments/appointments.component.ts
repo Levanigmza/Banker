@@ -19,6 +19,9 @@ export class AppointmentsComponent implements OnInit {
   selectedTime: string = '';
   selectedService: string = '';
   userId: string = '';
+  Alert: string = '';
+  AlertDisplay : boolean = false;
+
 
   availableDates: string[] = [];
   availableTimes: string[] = [];
@@ -93,13 +96,13 @@ export class AppointmentsComponent implements OnInit {
 
     switch (workinghours) {
       case '9:30-19:00':
-        this.availableTimes.push('9:00', '9:30','10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30' , '14:00', '14:30', '15:00', '15:30', '16:00', '16:30' , '17:00', '17:30' ,'18:00', '18:30');
+        this.availableTimes.push('9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30');
         break;
       case '10:00-18:00':
-        this.availableTimes.push('10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30' , '14:00', '14:30', '15:00', '15:30', '16:00', '16:30' , '17:00', '17:30');
+        this.availableTimes.push('10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30');
         break;
       default:
-        this.availableTimes.push('10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30' , '14:00', '14:30', '15:00', '15:30', '16:00', '16:30' , '17:00');
+        this.availableTimes.push('10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00');
         break;
     }
 
@@ -117,17 +120,35 @@ export class AppointmentsComponent implements OnInit {
 
 
   makeAppointment() {
-    const appointment: Appointment = {
-      userId: this.userId,
-      branchId: this.branch.objectKey,
-      date: this.selectedDate,
-      time: this.selectedTime,
-      service: this.selectedService
-    };
 
-    this.appointmentService.addAppointment(appointment);
-    this.closepopup();
+    if (!this.selectedDate) {
+      this.Alert = "* გთხოვთ აირჩიოთ სასურველი თარიღი "
+      this.AlertDisplay = true
 
-    this.appointmentService.getAppointments(this.userId)
+    } else if (!this.selectedTime) {
+      this.Alert = "* გთხოვთ აირჩიოთ სასურველი დრო"
+      this.AlertDisplay = true
+    } else if (!this.selectedService) {
+      this.Alert = "* გთხოვთ აირჩიოთ სერვისი"
+      this.AlertDisplay = true
+    }
+    else {
+      const appointment: Appointment = {
+        userId: this.userId,
+        branchId: this.branch.objectKey,
+        date: this.selectedDate,
+        time: this.selectedTime,
+        service: this.selectedService,
+        address:this.branch.addressGe,
+        city : this.branch.cityGe,
+        photo:this.branch.photos
+
+      };
+
+      this.appointmentService.addAppointment(appointment);
+      this.closepopup();
+
+      this.appointmentService.getAppointments(this.userId)
+    }
   }
 }

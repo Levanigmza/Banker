@@ -7,6 +7,9 @@ export interface Appointment {
     date: string;
     time: string;
     service: string;
+    address : string;
+    city:string;
+    photo:string;
   }
   
 
@@ -19,7 +22,7 @@ export class AppointmentService {
 
     private appointments: Appointment[] = [];
 
-  constructor() { }
+  constructor() {}
 
   addAppointment(appointment: Appointment) {
     this.appointments.push(appointment);

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 export interface Service {
@@ -46,7 +47,7 @@ export class BranchService {
       const body = {
         objectType: "SC",
         isBOG: true,
-        isEXP: false,
+        isEXP: true,
         isSOL: false,
         isGel: false,
         isUsd: false,
@@ -67,4 +68,7 @@ export class BranchService {
         const randomIndex = Math.floor(Math.random() * this.branchImages.length);
         return this.branchImages[randomIndex];
       }
-}
+
+
+    
+    }

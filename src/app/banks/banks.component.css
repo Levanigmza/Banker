@@ -7,7 +7,78 @@
 }
 
 
-.bog {
+.choose-bank {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'FiraGO';
+
+}
+
+.banks-names {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bog-branches,
+.tbc-branches {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+}
+
+.bog-branches button,
+.tbc-branches button {
+    background-color: #274156;
+    border: 2px solid #274156;
+}
+
+.bog-branches button:hover,
+.tbc-branches button:hover {
+    background-color: #07121b;
+    box-sizing: 2px solid #ffffff;
+}
+.bog-branches button img,
+.tbc-branches button img{
+width: 90%;
+
+}
+.bog-branches button img:hover,
+.tbc-branches button img:hover{
+width: 87%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bog,
+.tbc {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -15,7 +86,8 @@
     gap: 10px;
 }
 
-.bog.blur {
+.bog.blur,
+.tbc.blur {
     filter: blur(10px);
 
 }
@@ -30,7 +102,8 @@
     position: absolute;
     z-index: 999;
 }
-.loader img{
+
+.loader img {
     width: 100px;
 }
 
@@ -112,7 +185,8 @@
 } */
 
 .bank-icon img {
-    width: 250px;
+    margin-top: 20px;
+    width: 220px;
 }
 
 .filters {
@@ -136,9 +210,11 @@
     justify-content: left;
     gap: 6px;
 }
-.dropdown{
+
+.dropdown {
     width: auto;
 }
+
 .drpdownhead {
     display: flex;
     flex-direction: column;
@@ -210,7 +286,7 @@
 
 }
 
-.branch-container.no-branchavailable{
+.branch-container.no-branchavailable {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-columns: repeat(1, 2fr);
@@ -313,6 +389,7 @@
 .not-available {
     background-color: #dc3546c9;
 }
+
 .appointment-av button {
     display: flex;
     flex-direction: row;
@@ -330,25 +407,28 @@
     font-size: 1rem;
     margin: 1rem auto;
 }
-.appointment button img{
+
+.appointment button img {
     width: 27px;
 }
-.appointment-av button:hover{
+
+.appointment-av button:hover {
     text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
 
     padding: 0.75rem 2rem;
 }
 
-.appointment-not button{
+.appointment-not button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    border: 1px solid #8f9fb1;;
+    border: 1px solid #8f9fb1;
+    ;
     padding: 0.75rem 1.5rem;
 
-    cursor:not-allowed;
+    cursor: not-allowed;
     color: #000000;
     background-color: #b9c9dd;
 }
@@ -380,12 +460,13 @@ button:hover {
     font-family: 'FiraGO';
 
 }
-hr{
+
+hr {
     width: 100%;
 }
 
-.no-branch{
-    color:#053354;
+.no-branch {
+    color: #053354;
     font-family: 'FiraGo';
     display: flex;
     flex-direction: row;
@@ -394,7 +475,7 @@ hr{
 }
 
 
-.appointment-popup{
+.appointment-popup {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -407,19 +488,54 @@ hr{
     backdrop-filter: blur(5px)
 }
 
+.return-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.return-back button {
+    cursor: pointer;
+    font-family: 'FiraGO';
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #18a5e13a;
+    border: 1px solid #18a5e13a;
+    color: #000000;
+}
+
+
+.return-back button:hover {
+    background-color: #05222e70;
+    color: #FFFFFF;
+    border: 1px solid gray;
+}
+
+.return-back button img {
+    width: 20px;
+    height: auto;
+}
 
 
 @media (min-width: 377px) and (max-width: 800px) {
-    .services{
+    .services {
         width: 100%;
         margin: 0;
     }
-    hr{
-       display: none;
+
+    hr {
+        display: none;
     }
-    
-    .bog {
+
+    .bog,
+    .tbc {
         flex-direction: column;
         justify-content: flex-start;
         padding: 10px;
@@ -461,7 +577,7 @@ hr{
 
     }
 
-    .dropdown{
+    .dropdown {
         width: auto;
     }
 
@@ -469,21 +585,24 @@ hr{
         width: 100%;
         height: 40px;
     }
-    
+
 
 
 }
 
 @media (min-width: 801px) and (max-width:1320px) {
-    .bog {
+
+    .bog,
+    .tbc {
         flex-direction: row;
         justify-content: flex-start;
         padding: 10px;
     }
-    hr{
+
+    hr {
         display: none;
-     }
-     
+    }
+
     .filters {
         width: 46%;
 
@@ -507,7 +626,7 @@ hr{
     .branch-card {
         width: 100%;
     }
-    
+
     .card-head img {
         width: 70%;
         margin: 0 auto;
@@ -515,6 +634,7 @@ hr{
 
     }
 }
+
 @media (min-width: 1321px) and (max-width:1620px) {
     .card-head {
 
@@ -526,6 +646,7 @@ hr{
     .branch-card {
         width: 90%;
     }
+
     .card-head img {
         width: 80%;
         margin: 0 auto;

@@ -6,17 +6,17 @@
     src: url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/firago@latest/latin-400-normal.woff) format('woff');
 }
 
-.close img{
+.close img {
     cursor: pointer;
     width: 35px;
-  }
-  
-  .close img:hover{
+}
+
+.close img:hover {
     cursor: pointer;
     width: 40px;
-  }
+}
 
-.head{
+.head {
     width: 100%;
     text-align: center;
     color: #274156;
@@ -27,31 +27,35 @@
     align-items: center;
     justify-content: space-between;
 }
-.close{
+
+.close {
     margin-right: 20px;
 }
-.head h2{
+
+.head h2 {
     margin-left: 20px;
 }
 
-.appointment{
+.appointment {
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
-.popup-body{
+.popup-body {
     font-family: 'FiraGO';
 
     background-color: #FFFFFF;
     width: 600px;
 }
-.card-head{
+
+.card-head {
     display: flex;
     flex-direction: row;
     justify-content: space-around
 }
+
 .card-head h2 {
     color: #053354;
     text-decoration: underline;
@@ -60,11 +64,13 @@
 }
 
 
-.card-head img{
+.card-head img {
+    box-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
 
     width: 30%;
 }
-.branch-info{
+
+.branch-info {
     font-family: 'FiraGO';
     color: #053354;
 
@@ -72,8 +78,9 @@
 
 .make-appointment {
     font-family: 'FiraGO';
-font-size: 16px;
+    font-size: 16px;
     margin-bottom: 20px;
+    padding: 5px;
 }
 
 .make-appointment select {
@@ -83,6 +90,16 @@ font-size: 16px;
     border-radius: 4px;
     margin-right: 10px;
     font-family: 'FiraGO';
+    color: #0963a3;
+    font-weight: 600;
+}
+
+.timeselect {
+    width: 155px;
+
+}
+.choose-service{
+    padding: 5px;
 
 }
 
@@ -92,7 +109,8 @@ font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'FiraGO';
-
+    color: #0963a3;
+    font-weight: 600;
 }
 
 .choose-service span {
@@ -100,7 +118,8 @@ font-size: 16px;
     font-size: 16px;
     margin-right: 10px;
 }
-.confirm-appointment button{
+
+.confirm-appointment button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -118,8 +137,13 @@ font-size: 16px;
     margin: 1rem auto;
 }
 
-.confirm-appointment button:hover{
+.confirm-appointment button:hover {
     text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
 
     padding: 0.75rem 2rem;
+}
+
+.alert{
+    color: red;
+    font-family: 'FiraGo';
 }

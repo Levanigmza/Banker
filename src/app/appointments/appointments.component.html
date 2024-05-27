@@ -25,17 +25,17 @@
     <hr>
 
     <div class="make-appointment">
-        <span>აირჩიეთ დრო : </span>
+        <span>აირჩიეთ თარიღი და დრო : </span>
         <select [(ngModel)]="selectedDate" (change)="updateAvailableTimes(branch)">
             <option *ngFor="let date of availableDates" [value]="date">{{ date }}</option>
         </select>
-        <select [(ngModel)]="selectedTime">
+        <select class="timeselect" [(ngModel)]="selectedTime" >
             <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
         </select>
     </div>
     <hr>
     <div class="choose-service">
-        <span>აირჩიეთ მომსახურეობა :</span>
+        <span>აირჩიეთ სერვისი :</span>
         <select [(ngModel)]="selectedService">
             <option *ngFor="let service of branch.services" [value]="service.serviceName">{{ service.serviceName }}
             </option>
@@ -43,6 +43,10 @@
     </div>
     <hr>
     <div class="confirm-appointment">
+        <span class="alert" *ngIf="AlertDisplay">
+            {{Alert}}
+        </span>
+
         <button (click)="makeAppointment()">დაჯავშნა</button>
     </div>
 </div>
