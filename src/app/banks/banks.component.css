@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'FiraGO';
-
+color: #274156;;
 }
 
 .banks-names {
@@ -30,12 +30,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    width: 500px;
 }
 
 .bog-branches button,
 .tbc-branches button {
+    padding: 5px 10px;
     background-color: #274156;
     border: 2px solid #274156;
 }
@@ -45,14 +44,25 @@
     background-color: #07121b;
     box-sizing: 2px solid #ffffff;
 }
-.bog-branches button img,
-.tbc-branches button img{
-width: 90%;
 
+.bog-branches button img,
+.tbc-branches button img {
+    width: 100%;
+    border-radius: 15px;
 }
+
+.bank-choose-icon {
+    width: 250px;
+}
+.bank-choose-icon :hover{
+    width: 255px;
+    border-radius: 55px;
+}
+
 .bog-branches button img:hover,
-.tbc-branches button img:hover{
-width: 87%;
+.tbc-branches button img:hover {
+    width: 99%;
+    border-radius: 5px;
 
 }
 
@@ -524,7 +534,13 @@ hr {
 }
 
 
-@media (min-width: 377px) and (max-width: 800px) {
+@media (min-width: 307px) and (max-width: 800px) {
+    .banks-names {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
     .services {
         width: 100%;
         margin: 0;

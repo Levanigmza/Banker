@@ -2,48 +2,76 @@
     font-family: 'FiraGo';
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  .appointment-item {
+}
+
+
+
+.appointment-item div {
+    margin-bottom: 5px;
+}
+
+.appointment-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .appointment-item div {
-    margin-bottom: 5px;
-  }
+}
 
-  .appointment-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap:20px
-  }
-  .branch-photo img{
+.branch-photo img {
     width: 235px;
-  }
+}
 
-  .filters {
+.filters {
     display: flex;
     gap: 10px;
-  }
-  
-  .filters button {
+}
+
+.filters button {
     font-family: 'FiraGo';
     padding: 8px 15px;
-font-size: 14px;
+    font-size: 14px;
     background-color: #edf6ff;
-    border:1px solid rgb(39, 39, 39);
+    border: 1px solid rgb(39, 39, 39);
     color: rgb(39, 39, 39);
     cursor: pointer;
-  }
-  
-  .filters button:hover {
+}
+
+.filters button:hover {
     background-color: #053354;
     color: #edf6ff;
-    border:1px solid #edf6ff;
+    border: 1px solid #edf6ff;
 
-  }
-  
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 307px) and (max-width: 780px) {
+
+    .show-appointments {
+        margin: 20px
+    }
+
+    .branch-photo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .appointment-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+}

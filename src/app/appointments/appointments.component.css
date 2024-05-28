@@ -81,6 +81,10 @@
     font-size: 16px;
     margin-bottom: 20px;
     padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
 }
 
 .make-appointment select {
@@ -146,4 +150,25 @@
 .alert{
     color: red;
     font-family: 'FiraGo';
+}
+
+
+@media (min-width: 307px) and (max-width: 700px) {
+    .appointment {
+        margin:30px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .popup-body {
+        width: auto;
+    }
+
+    .make-appointment{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        }
+    
 }
