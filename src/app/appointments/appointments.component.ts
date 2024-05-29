@@ -141,7 +141,8 @@ export class AppointmentsComponent implements OnInit {
         service: this.selectedService,
         address:this.branch.addressGe,
         city : this.branch.cityGe,
-        photo:this.branch.photos
+        photo:this.branch.photos,
+        status:  1
 
       };
 

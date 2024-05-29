@@ -92,7 +92,7 @@ input:first-child {
 
 .incorrect_credentials p {
     font-family: FiraGo;
-    font-size: 16px;
+    font-size: 14.5px;
     margin: 10px;
     color: red
 }

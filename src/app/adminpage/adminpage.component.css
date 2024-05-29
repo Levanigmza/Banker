@@ -13,13 +13,71 @@
 }
 
 
-.logutbtn button{
-    background-color: #e29d9a80;
-    border-radius: 20px;
-    color: #053354;
-    font-family: 'FiraGo';
-    font-weight: 600;
-    border:1px solid #e29d9a80;
-    font-size: 16px;
-    padding:10px 20px;
+  .logout-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
   }
+  
+  .sign-out-button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .appointments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .appointment-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .appointment-content {
+    margin-bottom: 10px;
+  }
+  
+  .appointment-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .appointment-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .appointment-actions button:nth-child(1) {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .appointment-actions button:nth-child(2) {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .pending-status {
+    color: orange;
+  }
+  
+  .approved-status {
+    color: green;
+  }
+  
+  .declined-status {
+    color: red;
+  }
+  

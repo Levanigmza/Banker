@@ -45,7 +45,6 @@ export class AuthorizationComponent {
         }
         else{
           this.router.navigate(['/home']);
-
         }
       } else {
         this.Incorrect = true;

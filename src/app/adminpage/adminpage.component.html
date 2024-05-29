@@ -1,8 +1,33 @@
 <div class="admin-page">
-    <h2> thisss is   an Admin page</h2>
 
-    <div class="logutbtn">
-        <button class="sign-out-button" (click)="signOut()">გასვლა</button>
+  <div class="logout-btn">
+    <button class="sign-out-button" (click)="signOut()">გასვლა</button>
+  </div>
+
+  <div class="appointments">
+    <h3>ჯავშნები</h3>
+    <div *ngFor="let appointment of appointments" class="appointment-card">
+      <div class="appointment-content">
+        <p><strong>მომხმარებელი:</strong> {{ getUserName(appointment.userId) }}</p>
+        <p><strong>პირადი ნომერი</strong>{{appointment.userId}}</p>
+        <p><strong>თარიღი და საათი:</strong> {{ appointment.date }} - {{ appointment.time }}</p>
+        <p><strong>სერვისი:</strong> {{ appointment.service }}</p>
+        <p><strong>ფილიალის მისამართი:</strong>{{appointment.city}} {{ appointment.address }}</p>
+        <p>
+          <strong>Status:</strong> 
+          <span [ngClass]="{
+            'pending-status': appointment.status === 1,
+            'approved-status': appointment.status === 2,
+            'declined-status': appointment.status === 0
+          }">
+            {{ getStatusText(appointment.status) }}
+          </span>
+        </p>
       </div>
-
+      <div *ngIf="appointment.status === 1 " class="appointment-actions">
+        <button (click)="approveAppointment(appointment)">დადასტურება</button>
+        <button (click)="declineAppointment(appointment)">უარყოფა</button>
+      </div>
+    </div>
+  </div>
 </div>
