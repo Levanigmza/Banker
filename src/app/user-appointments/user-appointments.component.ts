@@ -13,15 +13,14 @@ export class UserAppointmentsComponent implements OnInit {
 
   constructor(private appointmentService: AppointmentService, private branchService: BranchService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     const user = localStorage.getItem('UserId');
     if (user) {
-      this.userAppointments = this.appointmentService.getAppointments(user);
+      this.userAppointments = await this.appointmentService.getAppointments(user);
       this.filteredAppointments = [...this.userAppointments];
     } else {
       console.log('UserID not found in localStorage');
     }
-
   }
 
   filterAppointments(filter: string) {

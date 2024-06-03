@@ -1,28 +1,57 @@
 <div class="admin-page">
 
+  <h2>ჯავშნების მართვა</h2>
+  
   <div class="logout-btn">
     <button class="sign-out-button" (click)="signOut()">გასვლა</button>
   </div>
+  <hr>
+
+  <div class="filters">
+    <label for="statusFilter">სტატუსი:</label>
+    <select id="statusFilter" [(ngModel)]="statusFilter" (change)="applyFilters()">
+      <option value="">ყველა</option>
+      <option value="1">მიმდინარე</option>
+      <option value="2">დადასტურებული</option>
+      <option value="0">უარყოფილი</option>
+    </select>
+
+    <label for="userIdFilter">მომხმარებელი ID:</label>
+    <input type="text" id="userIdFilter" [(ngModel)]="userIdFilter" (input)="applyFilters()">
+
+    <label for="nameFilter">სახელი:</label>
+    <input type="text" id="nameFilter" [(ngModel)]="nameFilter" (input)="applyFilters()">
+
+    <label for="surnameFilter">გვარი: </label>
+    <input type="text" id="surnameFilter" [(ngModel)]="surnameFilter" (input)="applyFilters()">
+  </div>
+
+  <hr>
+
 
   <div class="appointments">
-    <h3>ჯავშნები</h3>
-    <div *ngFor="let appointment of appointments" class="appointment-card">
+    <div *ngFor="let appointment of filteredAppointments" class="appointment-card">
       <div class="appointment-content">
-        <p><strong>მომხმარებელი:</strong> {{ getUserName(appointment.userId) }}</p>
-        <p><strong>პირადი ნომერი</strong>{{appointment.userId}}</p>
-        <p><strong>თარიღი და საათი:</strong> {{ appointment.date }} - {{ appointment.time }}</p>
-        <p><strong>სერვისი:</strong> {{ appointment.service }}</p>
-        <p><strong>ფილიალის მისამართი:</strong>{{appointment.city}} {{ appointment.address }}</p>
-        <p>
-          <strong>Status:</strong> 
-          <span [ngClass]="{
+        <div class="details">
+          <p><strong>მომხმარებელი : </strong> {{ getUserName(appointment.userId) }}</p>
+          <p><strong>პირადი ნომერი : </strong>{{appointment.userId}}</p>
+          <p><strong>თარიღი და საათი : </strong> {{ appointment.date }} - {{ appointment.time }}</p>
+          <p><strong>სერვისი : </strong> {{ appointment.service }}</p>
+          <p><strong>ფილიალის მისამართი : </strong>{{appointment.city}} {{ appointment.address }}</p>
+        </div>
+        <div class="status">
+          <p>
+            <strong>სტატუსი:</strong>
+            <span [ngClass]="{
             'pending-status': appointment.status === 1,
             'approved-status': appointment.status === 2,
             'declined-status': appointment.status === 0
           }">
-            {{ getStatusText(appointment.status) }}
-          </span>
-        </p>
+              {{ getStatusText(appointment.status) }}
+            </span>
+          </p>
+        </div>
+
       </div>
       <div *ngIf="appointment.status === 1 " class="appointment-actions">
         <button (click)="approveAppointment(appointment)">დადასტურება</button>
