@@ -10,6 +10,8 @@ import { BranchService } from '../services/BankBranchs.service';
 export class UserAppointmentsComponent implements OnInit {
   userAppointments: Appointment[] = [];
   filteredAppointments: Appointment[] = [];
+  activeFilter: string = 'all'; 
+
 
   constructor(private appointmentService: AppointmentService, private branchService: BranchService) { }
 
@@ -24,9 +26,11 @@ export class UserAppointmentsComponent implements OnInit {
   }
 
   filterAppointments(filter: string) {
+    this.activeFilter = filter; 
+    
     const daysOfWeek = ['კვირა', 'ორშაბათი', 'სამშაბათი', 'ოთხშაბათი', 'ხუთშაბათი', 'პარასკევი', 'შაბათი'];
 
-    const today = new Date();
+       const today = new Date();
     const formattedDate = this.formatDate(today);
     const dayOfWeek = daysOfWeek[today.getDay()];
 
@@ -50,7 +54,18 @@ export class UserAppointmentsComponent implements OnInit {
         break;
     }
   }
-
+  getStatusText(status: number): string {
+    switch (status) {
+      case 1:
+        return 'მიმდინარე';
+      case 2:
+        return 'დადასტურებული';
+      case 0:
+        return 'უარყოფილი';
+      default:
+        return 'Unknown Status';
+    }
+  }
 
   formatDate(date: Date): string {
     const day = (date.getDate()).toString().padStart(2, '0');

@@ -47,8 +47,34 @@
 
 }
 
+.filters button.active {
+    background-color: #053354;
+    color: #edf6ff;
+    border: 1px solid #edf6ff;
+
+  }
 
 
+  
+.pending-status {
+    color: orange;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+  }
+  
+  .approved-status {
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: rgb(43, 139, 43);
+  }
+  
+  .declined-status {
+    font-weight: bold;
+    color: red;
+    letter-spacing: 0.5px;
+
+  }
 
 
 

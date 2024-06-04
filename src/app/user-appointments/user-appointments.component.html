@@ -1,10 +1,10 @@
 <div class="appointments-container">
     <h2>ჩემი ჯავშნები : </h2>
     <div class="filters">
-        <button (click)="filterAppointments('all')">ყველა</button>
-        <button (click)="filterAppointments('today')">დღეს</button>
-        <button (click)="filterAppointments('tomorrow')">ხვალ</button>
-    </div>
+        <button [class.active]="activeFilter === 'all'" (click)="filterAppointments('all')">ყველა</button>
+        <button [class.active]="activeFilter === 'today'" (click)="filterAppointments('today')">დღეს</button>
+        <button [class.active]="activeFilter === 'tomorrow'" (click)="filterAppointments('tomorrow')">ხვალ</button>
+      </div>
     <hr>
     <div class="show-appointments" *ngIf="filteredAppointments.length > 0; else noAppointments">
         <div *ngFor="let appointment of filteredAppointments" class="appointment-item">
@@ -18,8 +18,18 @@
                 <div>
                     <strong>სერვისი:</strong> {{ appointment.service }}
                 </div>
+
                 <div>
                     <strong>მისამართი:</strong> {{ appointment.address }}, {{ appointment.city }}
+                </div>
+                <div>
+                    <strong>სტატუსი: </strong>            <span [ngClass]="{
+                        'pending-status': appointment.status === 1,
+                        'approved-status': appointment.status === 2,
+                        'declined-status': appointment.status === 0
+                      }">
+                          {{ getStatusText(appointment.status) }}
+                        </span>
                 </div>
             </div>
             <div class="branch-photo">
