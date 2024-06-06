@@ -2,8 +2,15 @@
 
   <h2>ჯავშნების მართვა</h2>
   
+  
   <div class="logout-btn">
+
+      <div class="user-info-button" *ngIf="adminName ">
+        <img src="assets/user.png" style="width: 35px;" alt="User Image">
+          <p> {{ adminName }}</p>
+  </div>
     <button class="sign-out-button" (click)="signOut()">გასვლა</button>
+
   </div>
   <hr>
 

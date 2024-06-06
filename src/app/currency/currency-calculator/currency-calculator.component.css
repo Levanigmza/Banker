@@ -77,7 +77,8 @@
 }
 
 .result {
-    color: #274156;
+    background-color: #274156;
+    color: #FFFFFF;
     margin-top: 20px;
     text-align: center;
     font-size: 19px;

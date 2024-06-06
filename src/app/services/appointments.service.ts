@@ -97,6 +97,7 @@ export class AppointmentService {
     const store = tx.objectStore('appointments');
     const index = store.index('by-userId');
     const appointments = await index.getAll(userId);
+    
     console.log(appointments);
   
     const appointment = appointments.find(app => app.date === date && app.time === time && app.branchId === branch);

@@ -18,12 +18,24 @@
     margin: 20px;
 
 }
-
+.user-info-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+  
+    font-family: 'FiraGo';
+  }
+  
 
   .logout-btn {
+    max-height:40px ;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
+    gap:30px
   }
   
   .sign-out-button {
@@ -38,6 +50,7 @@ font-size: 15px;
   }
   
   .appointments {
+
     margin-top: 40px;
     padding: 0;
     display: grid;
@@ -47,7 +60,7 @@ font-size: 15px;
   
   .appointment-card {
 
-    background: white;
+    background-color: #dae8fa;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -55,6 +68,7 @@ font-size: 15px;
   }
   
   .appointment-content {
+
     margin-bottom: 10px;
     font-family: 'FiraGO';
     display: flex;
@@ -89,16 +103,17 @@ font-size: 15px;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'FiraGO';
+    font-size: 14px;
 
   }
   
   .appointment-actions button:nth-child(1) {
-    background-color: #217023;
+    background-color: #1e6620;
     color: white;
   }
   
   .appointment-actions button:nth-child(2) {
-    background-color: #f44336;
+    background-color: #a5352d;
     color: white;
   }
   

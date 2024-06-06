@@ -23,6 +23,7 @@
 
 .branch-photo img {
     width: 235px;
+    border-radius: 10px;
 }
 
 .filters {

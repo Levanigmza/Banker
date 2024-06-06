@@ -18,14 +18,16 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 750px;
+    min-height: 750px;
 
 }
 
 .loginpopup {
-    width: 35%;
+    width: 30%;
+
 }
 .loginpopup h2{
+
     text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
 }
 
