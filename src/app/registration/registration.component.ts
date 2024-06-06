@@ -72,7 +72,7 @@ export class RegistrationComponent {
 
 
   Navigate_tosignin() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['']);
 
   }
 }

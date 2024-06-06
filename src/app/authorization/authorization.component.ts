@@ -44,7 +44,7 @@ export class AuthorizationComponent {
           this.router.navigate(['/adminpage']);
         }
         else{
-          this.router.navigate(['/home']);
+          this.router.navigate(['']);
         }
       } else {
         this.Incorrect = true;
