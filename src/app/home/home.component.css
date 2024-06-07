@@ -7,7 +7,6 @@
 }
 
 .login{
-    background-image: url("/assets/17745.png");
     background-size: cover; 
     background-position: center;
     padding: 20px;
@@ -53,6 +52,15 @@
 
 .register-prompt button:hover {
     background-color: #218838;
+}
+.register-prompt p{
+    font-family: FiraGo;
+background-color: #ffff;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 900;
+    text-shadow: none;
+
 }
 
 
