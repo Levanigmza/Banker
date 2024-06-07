@@ -1,12 +1,12 @@
 footer {
   height: 100px;
-    margin-top: auto;
-    padding: 20px;
-    background-color: #000000;
-    color: #fff;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 0;
-  }
+  margin-top: auto;
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}

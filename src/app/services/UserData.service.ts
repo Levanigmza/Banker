@@ -80,7 +80,7 @@ export class UserDataservice {
     clearLocalStorage() {
         localStorage.removeItem("authToken")
         localStorage.removeItem("UserId")
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
 
     }
 }
